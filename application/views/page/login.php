@@ -8,42 +8,7 @@
 	 $this->load->view('page/header'); 
 
 	?>
-<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-	$(document).ready(function()
-	{
-		$(function() 
-		{
-  			$("form[name='frm']").validate({
-    		rules: {
-     					user_email: {
-        						required: true,
-        						email: true
-     							},
-					    user_pass: {
-					        required: true,
-					        minlength: 5
-      							   }
-    				},
-   			messages: {
-     					user_pass: {
-        							required: "Please provide a password",
-       								minlength: "Your password must be at least 5 characters long"
-      				 				},
-      					user_email: {
-        							required: "Please Enter your Email Id",
-        							email: "Please Enter The Valid Email"
-     								},
-    				  },
-    		submitHandler: function(form)
-    			{
-      			form.submit();
-    			}
-  			});
-		});
-	});
-</script>
+	
 	<div id="blog" class="section">
 
 		<!-- Container -->
@@ -56,16 +21,21 @@
 				<main id="main" class="col-md-6 offset-md-4">
 					<div class="">
 						
-						
+						<?php echo validation_errors(); ?>
 						<!-- /blog comments -->
 
 						<!-- reply form -->
 						<div class="reply-form">
 							<h3 style="color: white;" class="">User Login </h3>
 							<div  style="border: 2px solid red;padding: 50px;">
-							<form method="post" name="frm" action="<?php echo base_url();?>login/login_user">
-								<input class="input" type="email" name="user_email" id="user_email" placeholder="Email"><br>
-								<input class="input" type="password" name="user_pass" id="user_pass" placeholder="password******"><br>
+								
+							<form method="post" id="frm" name="frm" action="<?php echo base_url();?>login/login_user">
+								<?php echo form_error('user_email'); ?>
+								<input class="input" type="email" name="user_email" id="user_email" placeholder="Email" value="<?php echo set_value('user_email'); ?>"><br>
+
+								<?php echo form_error('user_pass'); ?>
+								<input class="input" type="password" name="user_pass" id="user_pass" placeholder="password******" value="<?php echo set_value('user_pass'); ?>"><br>
+
 								<input type="submit" class="main-btn" name="login" id="login" value="Submit"><br><br>
 								<a href="<?php echo base_url();?>login/signup_user">SignUp</a>
 							<a style="margin-left: 20px;" href="<?php echo base_url();?>login/forget">Forget Password</a>

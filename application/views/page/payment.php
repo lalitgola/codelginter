@@ -41,7 +41,7 @@
 								<h3></h3>
 								<form class="contact-form" method="post" action="">    
 									<input type="text" class="input" placeholder="Address" name="adddress" disabled id="address"><br>
-									<img src="http://chart.apis.google.com/chart?cht=qr&amp;chs=300x300&amp;chl=mwe6hgmMobyxjPYdCrqNnaedbXS8dPUYn3" alt="QR Code" style="width:200px;border:0;">
+									<img src="http://chart.apis.google.com/chart?cht=qr&amp;chs=300x300&amp;chl=2NAmNU63ofwYEAgvuEHqVZxsgA91ubtCEfo" alt="QR Code" style="width:200px;border:0;">
 								</form>
 							</div>											
 					    </div>							    

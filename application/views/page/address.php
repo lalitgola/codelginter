@@ -20,7 +20,7 @@
 				<div class="col-md-9">
 					<div class="blog">					
 						<div class="blog-content">							
-							<button class="main-btn">New Address</button>				
+							<a href="<?php echo base_url();?>bitcoin" class="main-btn">New Address</a>				
 						</div>
 						<div class="blog-content">							
 							 <table class="table scrolling">
@@ -32,36 +32,13 @@
 							      </tr>
 							    </thead>
 							    <tbody>
+							    	<?php $i=1; foreach($listing as $list) { ?>
 							      <tr>
-							        <td>Default</td>
-							        <td>Defaultson</td>
-							        <td>def@somemail.com</td>
+							        <td><?php echo $i++;?></td>
+							        <td><img src="http://chart.apis.google.com/chart?cht=qr&amp;chs=300x300&amp;chl=<?php echo $list ?>" alt="QR Code" style="width:50px;border:0;"></td>
+							        <td></td>
 							      </tr>      
-							      <tr class="success">
-							        <td>Success</td>
-							        <td>Doe</td>
-							        <td>john@example.com</td>
-							      </tr>
-							      <tr class="danger">
-							        <td>Danger</td>
-							        <td>Moe</td>
-							        <td>mary@example.com</td>
-							      </tr>
-							      <tr class="info">
-							        <td>Info</td>
-							        <td>Dooley</td>
-							        <td>july@example.com</td>
-							      </tr>
-							      <tr class="warning">
-							        <td>Warning</td>
-							        <td>Refs</td>
-							        <td>bo@example.com</td>
-							      </tr>
-							      <tr class="active">
-							        <td>Active</td>
-							        <td>Activeson</td>
-							        <td>act@example.com</td>
-							      </tr>
+							      <?php } ?>
 							    </tbody>
   							</table>			
 						</div>

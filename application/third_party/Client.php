@@ -17,7 +17,7 @@ class Client {
 
        function getAddress($user_session)
         {
-                echo  $this->jsonrpc->getaccountaddress("zelles(" . $user_session . ")");
+                return  $this->jsonrpc->getaccountaddress("zelles(" . $user_session . ")");
 	}
 
 	function getAddressList($user_session)
